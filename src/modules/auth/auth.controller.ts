@@ -15,7 +15,7 @@ export class AuthController {
   }
 
   @Post('login')
-  login(@Body() dto: UserLoginDTO): Promise<any> {
+  login(@Body() dto: UserLoginDTO): Promise<AuthUserResponse> {
     return this.authService.loginUser(dto);
   }
   @UseGuards(JwtAuthGuard)
